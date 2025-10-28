@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEXUS PLYWOOD & HARDWARE - Your Complete Destination for Premium Plywood, Hardware, Laminate, Flush Doors, HDMR, Bath Accessories & Veneer in Gondal">
+    <meta name="keywords" content="plywood, hardware, laminate, flush doors, HDMR, bath accessories, veneer, Gondal, BVM, Coller Germany">
+    <title>NEXUS PLYWOOD & HARDWARE - Premium Plywood & Hardware Solutions in Gondal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: 25 95% 53%;
+            --secondary: 24 45% 20%;
+            --background: 0 0% 100%;
+            --foreground: 24 10% 10%;
+            --card: 0 0% 100%;
+            --muted: 25 20% 96%;
+            --border: 25 30% 90%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: hsl(var(--foreground));
+            background-color: hsl(var(--background));
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: hsla(24, 45%, 20%, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: none;
+        }
+
+        .nav-menu.active {
+            display: block;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: hsl(var(--primary));
+        }
+
+        .menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: hsl(var(--secondary));
+            overflow: hidden;
+            padding-top: 64px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary)), hsl(25 95% 53% / 0.2));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 56rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 5vw, 3.75rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .btn {
+            display: inline-block;
+            background: hsl(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .btn:hover {
+            background: hsl(25 95% 48%);
+            transform: translateY(-2px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 1s ease-in-out infinite;
+        }
+
+        .scroll-indicator-inner {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .scroll-dot {
+            width: 4px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: hsl(var(--background));
+        }
+
+        .section-title {
+            font-size: clamp(1.875rem, 4vw, 2.25rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            color: hsl(24 10% 45%);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            color: hsl(24 10% 45%);
+        }
+
+        .product-list li {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-image {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+
+          /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background: hsl(var(--muted));
+        }
+
+        .products-intro {
+            text-align: center;
+            color: hsl(24 10% 45%);
+            margin-bottom: 4rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-nav-card {
+            background: hsl(var(--card));
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .category-nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-nav-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-nav-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .category-nav-card:hover .category-nav-image img {
+            transform: scale(1.1);
+        }
+
+        .category-nav-content {
+            padding: 1.5rem;
+        }
+
+        .category-nav-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: hsl(var(--primary));
+        }
+
+        .category-nav-description {
+            color: hsl(24 10% 45%);
+            font-size: 0.95rem;
+        }
+
+        .category {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .category-title {
+            font-size: clamp(1.5rem, 3vw, 1.875rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border-left: 4px solid hsl(var(--primary));
+            padding-left: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: hsl(var(--card));
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 192px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: hsl(24 10% 45%);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-price {
+            color: hsl(var(--primary));
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-sizes {
+            font-size: 0.875rem;
+            color: hsl(24 10% 45%);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: hsl(var(--secondary));
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            color: hsl(var(--primary));
+        }
+
+        .contact-card h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: hsl(var(--primary));
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: hsla(24, 45%, 20%, 0.5);
+            padding: 2rem 0;
+            text-align: center;
+            color: hsl(24 10% 45%);
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .menu-btn {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .nav-menu {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div>
+                    <img src="IMG-20251018-WA0007.jpg" alt="Nexus Logo" class="logo">
+                </div>
+            </div>
+            
+            <div>
+                <div class="nav-menu" id="navMenu">
+                    <div class="nav-links">
+                        <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+                        <br>
+                        <button class="nav-link" onclick="scrollToSection('about')">About</button>
+                        <br>
+                        <button class="nav-link" onclick="scrollToSection('products')">Products</button>
+                        <br>
+                        <button class="nav-link" onclick="scrollToSection('contact')">Contact</button>
+                    </div>
+                </div>
+
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <span id="menuIcon">☰</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="IMG-20251018-WA0007.jpg" alt="Nexus Plywood & Hardware" class="hero-logo">
+                <h1 style="text-shadow: 2px 4px 3px rgba(255, 165, 0, 1.5)"><marquee scrollamount="20"><span style="color: #b1b9ffc0; text-shadow: 2px 4px 3px rgb(139, 228, 201) ">Welcome to </span><span style="color: #ff9500; text-shadow: 2px 4px 3px rgba(255, 255, 255, 1) ">NEXUS</span> PLYWOOD & HARDWARE</marquee></h1>
+                <p>Your Complete Destination for Premium Plywood, Hardware, Laminate, Flush Doors, HDMR, Bath Accessories & Veneer</p>
+                <button class="btn" onclick="scrollToSection('products')">Explore Our Products</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container"><br>
+            <h2 class="section-title">About Us</h2>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>NEXUS PLYWOOD & HARDWARE is your trusted partner for all construction and interior needs. Located in Gondal, we specialize in providing premium quality materials and hardware solutions.</p>
+                    <p>We have high-quality products of renowned brands like <strong>BVM</strong> (Solgen Enterprise) and <strong>Coller Germany</strong>, offering world-class architectural hardware, modular kitchen fittings, and wardrobe accessories and many more.</p>
+                    <h3>Our Product Range:</h3>
+                    <ul class="product-list">
+                        <li>• Plywood</li>
+                        <li>• Hardware</li>
+                        <li>• Laminate</li>
+                        <li>• Flush Doors</li>
+                        <li>• HDMR</li>
+                        <li>• Bath Accessories</li>
+                        <li>• Veneer</li>
+                    </ul>
+                </div>
+                
+                <div class="about-image">
+                    <img src="IMG-20251018-WA0006.jpg" alt="Nexus Contact Details">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container"><br>
+            <h2 class="section-title">Our Product Range</h2>
+            <p class="products-intro">Explore our comprehensive collection of premium hardware and plywood from various well reputed companies.</p>
+
+
+              <!-- Category Navigation -->
+            <div class="category-nav">
+                <a href="#wardrobe-accessories" class="category-nav-card">
+                    <div class="category-nav-image", style="height: 20rem; width: 100%;">
+                        <img src="13856.jpg",  style="height: 100rem;  width: 100%; height: 20rem; object-fit: contain;" alt="Wardrobe Accessories">
+                    </div>
+                    <div class="category-nav-content">
+                        <h3 class="category-nav-title", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 0.00000001rem;">WARDROBE ACCESSORIES</h3>
+                        <p class="category-nav-description", style="text-align: center; position: relative; bottom: 0.000111rem;">Premium organizers, trouser racks, and storage solutions<br>
+                        <button style="background-color: rgb(222, 162, 49); color: white; border: none; padding: 5px 10px; font-size: 14px; border-radius: 4px; cursor: pointer;">CLICK  AND  EXPLORE</button></p>
+                    </div>
+                </a>
+
+                <a href="#hardware-fittings" class="category-nav-card">
+                    <div class="category-nav-image", style="height: 20rem; width: 100%;">
+                        <img src="13866.jpg",  style="height: 100rem;  width: 100%; height: 20rem; object-fit: contain;" alt="Hardware fittings">
+                    </div>
+                    <div class="category-nav-content">
+                        <h3 class="category-nav-title", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 0.00000001rem;">HARDWARE & FITTINGS</h3>
+                        <p class="category-nav-description", style="text-align: center; position: relative; bottom: 0.000111rem;">Hinges, locks, bolts, and architectural hardware<br>
+                        <button style="background-color: rgb(222, 162, 49); color: white; border: none; padding: 5px 10px; font-size: 14px; border-radius: 4px; cursor: pointer;">CLICK  AND  EXPLORE</button></p>
+                    </div>
+                </a>
+
+               <a href="#modular-kitchen" class="category-nav-card">
+                    <div class="category-nav-image", style="height: 20rem; width: 100%;">
+                        <img src="13885.jpg",  style="height: 100rem;  width: 100%; height: 20rem; object-fit: contain;" alt="Hardware fittings">
+                    </div>
+                    <div class="category-nav-content">
+                        <h3 class="category-nav-title", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 0.00000001rem;">MODULAR KITCHEN</h3>
+                        <p class="category-nav-description", style="text-align: center; position: relative; bottom: 0.000111rem;">Drawer systems, pull-outs, and corner solutions<br>
+                        <button style="background-color: rgb(222, 162, 49); color: white; border: none; padding: 5px 10px; font-size: 14px; border-radius: 4px; cursor: pointer;">CLICK  AND  EXPLORE</button></p>
+                    </div>
+                </a>
+            </div>
+            <!-- Wardrobe Accessories -->
+            <div id="wardrobe-accessories" class="category">
+                <br><br><br><br><br>                <h3 class="category-title">Wardrobe Accessories</h3>
+                <div class="product-grid">
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12850.jpg"><img src="12850.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                ORGANISER TRAY -COFFEE LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12890.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹6115 - ₹7285</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12852.jpg"><img src="12852.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                STORAGE BASKET- COFFEE LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12892.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹6020 - ₹7075</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12853.jpg"><img src="12853.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                GLASS STORAGE BASKET- COFFEE LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12893.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹5390 - ₹6440</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12854.jpg"><img src="12854.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                SIDE TROUSER RACK - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12894.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2450</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12855.jpg"><img src="12855.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                SIDE TROUSER RACK - COFFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12895.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2710</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12857.jpg"><img src="12857.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                DOUBLE RAW TROUSER RACK - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12915.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2790</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12858.jpg"><img src="12858.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                DOUBLE RAW TROUSER RACK - COFFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12916.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹3015</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12862.jpg"><img src="12862.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TIE RACK - COFFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12919.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1900</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12863.jpg"><img src="12863.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TIE RACK - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12920.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1785</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12865.jpg"><img src="12865.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                WARDROBE LIFTER - COFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12921.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2150</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12866.jpg"><img src="12866.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                WARDROBE LIFTER - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12922.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1990</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12851.jpg"><img src="12851.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TROUSER RACK - COFFEE LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12891.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹3430 - ₹4130</p>
+                        </div>
+                    </div> 
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12872.jpg"><img src="12872.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.96rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TRIPLE LEATHER DRAWER - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12926.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹5450 - ₹6615</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12846.jpg"><img src="12846.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                GLASS STORAGE BASKET- GRAY LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12874.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹5600 - ₹6650</p>
+                        </div>
+                    </div>  
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12848.jpg"><img src="12848.jpg" alt="Butt Hinges", style="height: 5 rem; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                STORAGE BASKET- GRAY LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12888.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹5270 - ₹6325</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12847.jpg"><img src="12847.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TROUSER RACK - GRAY LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12887.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2730 - ₹3150</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12846.jpg"><img src="12846.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                ORGANISER TRAY -GRAY LEATHER</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12874.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹5600 - ₹6650</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12870.jpg"><img src="12870.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.3rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                ROATATE MIRROR</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="13541.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1965</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12867.jpg"><img src="12867.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                ROATATING SHOE RACK - COFFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12923.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹16850</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12868.jpg"><img src="12868.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                ROATATING SHOE RACK - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12924.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹15790</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12871.jpg"><img src="12871.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                SQUARE CLOTING ROD</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="13542.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1175</p>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12860.jpg"><img src="12860.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TOP MOUNT TROUSER RACK - COFFEE</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12917.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2610</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12861.jpg"><img src="12861.jpg" alt="Butt Hinges", style="height: 5 rem;  object-fit: contain"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                TOP MOUNT TROUSER RACK - GRAY</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12918.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2450</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hardware & Fittings -->
+            <div id="hardware-fittings" class="category">
+                <br><br><br><br><br>
+                <h3 class="category-title">Hardware & Fittings</h3>
+                <div class="product-grid">
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="IMG_20251021_141047.jpg"><img src="IMG_20251021_141047.jpg" alt="Cut & Butt Hinges", style="height: 5 rem  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Cut & Butt Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12186.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹29 - ₹130</p>
+                        </div>
+                    </div>
+                
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12188.jpg"><img src="12188.jpg" alt="Butt Hinges", style="height: 5 rem"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Butt Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12189 (1).jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹62 - ₹630</p>
+                        </div>
+                    </div>
+    
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12191 (1).jpg"><img src="12191 (1).jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Parlament Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12192 (1).jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹190 - ₹650</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12194.jpg"><img src="12194.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Flower Door Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12195.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹185 - ₹298</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12197.jpg"><img src="12197.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">T Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12198.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹55 - ₹225</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12203.jpg"><img src="12203.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Stone Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12201.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹65</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12204.jpg"><img src="12204.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Duck Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12202.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹185 - ₹205</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12206.jpg"><img src="12206.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">L Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12207.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹36 - ₹75</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12211.jpg"><img src="12211.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">W Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12213.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹45 - ₹94</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12212.jpg"><img src="12212.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Z Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12214.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹40 - ₹64</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12221.jpg"><img src="12221.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Universal Bracket</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12218.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹45 - ₹56</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12220.jpg"><img src="12220.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Brass Cam Bolt</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12219.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹250</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12418.jpg"><img src="12418.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Door Stopper</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12419.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹50 - ₹155</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12228.jpg"><img src="12228.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">PVC Magnet</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12229.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹12 - ₹60</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12225.jpg"><img src="12225.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">S.S. Magnet</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12232.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹28 - ₹55</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12224.jpg"><img src="12224.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">PVC Push Magnet</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="IMG_20251021_135838.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹30 - ₹140</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12426.jpg"><img src="12426.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.4rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Aluminium Tower Bolt 12mm</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12431.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹140 - ₹420</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12427.jpg"><img src="12427.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Aluminium Xylo Tower Bolt 10mm</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12438.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹105 - ₹320</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12428.jpg"><img src="12428.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.3rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Aluminium Super Marble Heavy</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12439.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹95 - ₹480</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12430.jpg"><img src="12430.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">L-Tower Bolt (Brass Hook)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12440.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹61 - ₹170</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12429.jpg"><img src="12429.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">L-Tower Bolt (S.S. Hook)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12435.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹64 - ₹120</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12442.jpg"><img src="12442.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 0.95rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">SS Tower Bolt 9mm & 10mm<br>SS Tower Bolt 10mm & 12mm (Single Rod)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12443.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹48 - ₹477</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12446.jpg"><img src="12446.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.6rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">SS Tower Bolt 12mm</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12447.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹140 - ₹2160</p>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12448.jpg"><img src="12448.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Gate Hook</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12449.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹16 - ₹40.5</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12457.jpg"><img src="12457.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Button and Self Button (SS)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12464.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹3.5 - ₹29</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12463.jpg"><img src="12463.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Table Chain</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12469.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹11 - ₹50</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12462.jpg"><img src="12462.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">L-Corner</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12465.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹9 - ₹20.5</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12461.jpg"><img src="12461.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">L Patti</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12468.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹6 - ₹14</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12473.jpg"><img src="12473.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Dining Table Bracket</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12479.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹2200 - ₹4500</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12474.jpg"><img src="12474.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Bed Socket (S.S.)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12481 (1).jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹350 - ₹575</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12475.jpg"><img src="12475.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Bed Fitting Gas Pump</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12483.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹575</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12476.jpg"><img src="12476.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Folding Table Bracket</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12480.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹580 - ₹1030</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12477.jpg"><img src="12477.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Bed Lifter</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12482.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹1730 - ₹2120</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12478.jpg"><img src="12478.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Bed Kadi 1.5mm</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12484.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹37 - ₹40</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12486.jpg"><img src="12486.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.4rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">S.S. CSK Phillips Screw</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12487.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.4rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹424 - ₹1232 <span, style="font-size: 0.7rem;">(per box)</span><span>---></span><button 
+    style="background-color: rgb(222, 162, 49); 
+           color: white; 
+           border: none; 
+           padding: 5px 10px; 
+           font-size: 14px; 
+           border-radius: 4px; 
+           cursor: pointer;"><a href="12488.jpg">
+    Free gift
+</a></button></p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="12490.jpg"><img src="12490.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">Tubler Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="12491.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">₹580 - ₹900</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14125.jpg"><img src="14125.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                MS Carriage Bolt</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14128.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹315 per kg</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14126.jpg"><img src="14126.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                M4 Machine Pin</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14129.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹325 per kg</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14127.jpg"><img src="14127.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Furniture Nails</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14130.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹450 - ₹551</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14136.jpg"><img src="14136.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Tri Bolt Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14143.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2136 - ₹2275</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14138.jpg"><img src="14138.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Night Latch Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14144.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1808 - ₹1946</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14137.jpg"><img src="14137.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Dead Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14145.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹1672 - ₹1808</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14140.jpg"><img src="14140.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Rim Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14146.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2785 - ₹2900</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14141.jpg"><img src="14141.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Drawer Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14147.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹320 - ₹360</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14142.jpg"><img src="14142.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Cupboard Lock</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14148.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹385 - ₹480</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14241.jpg"><img src="14241.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Imported Magnet Door Stop - 1</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14245.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹380 - ₹460</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14242.jpg"><img src="14242.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Imported Magnet Door Stop - 2</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14246.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹205 - ₹260</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14243.jpg"><img src="14243.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Imported Magnet Door Stop - 3</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14247.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹100 - ₹285</p>
+                        </div>
+                    </div>
+
+                     <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14244.jpg"><img src="14244.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.2rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Imported Magnet Door Stop - 4</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14248.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹145 - ₹360</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14260.jpg"><img src="14260.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Gas Pump</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14263.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹180 - ₹320</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14261.jpg"><img src="14261.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.6rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Telescopic Channel</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14264.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹21 - ₹80</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14262.jpg"><img src="14262.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Wardrobe Sliding Fitting</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14265.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹220 - ₹1660</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14267.jpg"><img src="14267.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Auto Hinges</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14268.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹50 - ₹510</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14270.jpg"><img src="14270.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.3rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Slim Tandem Box (Grey)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14271.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹2015 - ₹2765</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14273.jpg"><img src="14273.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Tandem Rack S.S.</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14275.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹480 - ₹550</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14274.jpg"><img src="14274.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.4rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                PVC Tandem Cutlery (Grey)</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14276.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹590 - ₹1150</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14278.jpg"><img src="14278.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.6rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Pantry Unit Glass</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14279.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹25000 - ₹29000</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14280.jpg"><img src="14280.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.4rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Universal Magic Corner</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14286.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹21500</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14281.jpg"><img src="14281.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Swing Corner</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14287.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹11500</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card", style="height: 25rem;">
+                        <div class="product-image">
+                            <a href="14289.jpg"><img src="14289.jpg" alt="", style="height: 5 rem;  width: 100%; height: 100%; object-fit: contain;"></a>
+                        </div>
+                        <div class="product-content", style="height: 3rem;">
+                            <h4 class="product-name", style="display: flex; justify-content: center; font-size: 1.8rem; text-decoration-line: underline; text-decoration-style: dotted;position: relative; bottom: 1rem;">
+                                Door Closer</h4>
+                            <div class="contact-cta", style="position: relative; bottom: 3.8rem;"><a href="14290.jpg" class="btn">Click here for More Details</a></div>
+                            <p class="product-price", style="display: flex; justify-content: center; font-size: 1.5rem; text-decoration-line: underline; text-decoration-style: wavy; position: relative; bottom: 3.5rem;">
+                                ₹945 - ₹5000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modular Kitchen Solutions -->
+            <div id="modular-kitchen" class="category">
+                <br><br><br><br><br>
+                <h3 class="category-title">Modular Kitchen Solutions</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Slim Drawer Box">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Slim Drawer Box (Gold)</h4>
+                            <p class="product-description">Premium gold finish slim drawer system by Coller Germany</p>
+                            <p class="product-price">₹8,500 - ₹12,000</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Tandem Drawer Box">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Tandem Drawer Box</h4>
+                            <p class="product-description">Smooth-gliding tandem drawer system</p>
+                            <p class="product-price">₹6,800 - ₹9,500</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Pull Out Box">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Pull Out Box</h4>
+                            <p class="product-description">Space-maximizing pull-out storage solutions</p>
+                            <p class="product-price">₹5,200 - ₹7,800</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Corner Solution">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Corner Solution</h4>
+                            <p class="product-description">Innovative corner storage systems</p>
+                            <p class="product-price">₹9,500 - ₹15,000</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Tall Unit">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Tall Unit</h4>
+                            <p class="product-description">Full-height storage units for kitchen pantry</p>
+                            <p class="product-price">₹12,000 - ₹18,500</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="src/assets/products/drawer-system.jpg" alt="Magic Corner">
+                        </div>
+                        <div class="product-content">
+                            <h4 class="product-name">Magic Corner & Swing Corner</h4>
+                            <p class="product-description">Revolutionary corner access solutions</p>
+                            <p class="product-price">₹14,500 - ₹22,000</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container"><br>
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-grid", style="display: flex; justify-content: center;">
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <h3>Phone</h3>
+                    <a href="tel:+917383383983">+91 73833 83983</a>
+                </div>
+            </div>    
+                <br>
+            <div class="contact-grid", style="display: flex; justify-content: center;">
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <i class="fa-brands fa-instagram fa-2xl" style="color: #ff9500; position: relative; right:10%; bottom: 15%"></i>
+                    <h3>Instagram</h3>
+                    <a href="https://instagram.com/nexus_plywood_hardware" target="_blank" rel="noopener noreferrer">nexus_plywood_hardware</a>
+                </div>
+            </div>
+
+                <br>
+                <div class="contact-grid", style="display: flex; justify-content: center;">
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3>Location</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.875rem;">
+                        Devbhumi Complex,<br>
+                        Near Auston Cinema,<br>
+                        Gundala Road,<br>
+                        Gondal, 360311
+                    </p>
+                    <br>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Devbhumi+Complex+Near+Auston+Cinema+Gundala+Road+Gondal+360311" target="_blank" rel="noopener noreferrer" class="map-link">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        Open in Google Maps
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <a href="tel:+917383383983" class="btn">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NEXUS PLYWOOD & HARDWARE. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">Visit our store for more details.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            navMenu.classList.toggle('active');
+            menuIcon.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.remove('active');
+                document.getElementById('menuIcon').textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
